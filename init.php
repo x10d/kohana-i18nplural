@@ -6,13 +6,13 @@
  *    ___(':count user is online', 1000, array(':count' => 1000));
  *    // 1000 users are online
  *
- * @uses I18n_Plural::get()
- * @uses I18n_Form::get()
- * @param string $string to translate
- * @param mixed $context string form or numeric count
- * @param array $values param values to insert
- * @param string $lang target language
- * @return string
+ * @uses    I18n_Plural::get()
+ * @uses    I18n_Form::get()
+ * @param   string  $string to translate
+ * @param   mixed   $context string form or numeric count
+ * @param   array   $values param values to insert
+ * @param   string  $lang target language
+ * @return  string
  */
 function ___($string, $context = 0, $values = NULL, $lang = NULL)
 {
@@ -26,12 +26,12 @@ function ___($string, $context = 0, $values = NULL, $lang = NULL)
 	if (is_numeric($context))
 	{
 		// Get plural form
-		$string = I18n_Plural::get($string, $context, $lang);
+		$string = I18n::plural($string, $context, $lang);
 	}
 	else
 	{
 		// Get custom form
-		$string = I18n_Form::get($string, $context, $lang);
+		$string = I18n::form($string, $context, $lang);
 	}
 	return empty($values) ? $string : strtr($string, $values);
 }

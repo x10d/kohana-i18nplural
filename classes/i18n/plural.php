@@ -5,10 +5,10 @@
  * @see http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html
  * @see http://unicode.org/repos/cldr/trunk/common/supplemental/plurals.xml
  * 
- * @package		I18n_Plural
- * @author		Korney Czukowski
- * @copyright	(c) 2010 Korney Czukowski
- * @license		http://kohanaphp.com/license
+ * @package    I18n_Plural
+ * @author     Korney Czukowski
+ * @copyright  (c) 2011 Korney Czukowski
+ * @license    MIT License
  */
 class I18n_Plural
 {
@@ -17,26 +17,6 @@ class I18n_Plural
 	 * @var array
 	 */
 	protected static $_instances = array();
-
-	/**
-	 * Returns translation of a string. If no translation exists, the original string will be
-	 * returned. No parameters are replaced.
-	 *
-	 *     $hello = I18n_Plural::get('Hello, my name is :name and I have :count friend.', 10);
-	 *     // 'Hello, my name is :name and I have :count friends.'
-	 *
-	 * @param string $string
-	 * @param mixed $count
-	 * @param string $lang
-	 * @return string
-	 */
-	public static function get($string, $count = 0, $lang = NULL)
-	{
-		// Get the translation form key
-		$form = I18n_Plural::instance(I18n::$lang)->get_category($count);
-		// Return the translation for that form
-		return I18n_Form::get($string, $form, $lang);
-	}
 
 	/**
 	 * Returns class instance, that handles plural inflection for the given language

@@ -1,12 +1,12 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /**
  * Plural rules for Welsh language:
- *
+ * 
  * Locales: cy
- *
+ * 
  * Languages:
  * - Welsh (cy)
- *
+ * 
  * Rules:
  *  zero → n is 0;
  *  one → n is 1;
@@ -14,16 +14,17 @@
  *  few → n is 3;
  *  many → n is 6;
  *  other → everything else
- *
+ * 
  * Reference CLDR Version 1.9 beta (2010-11-16 21:48:45 GMT)
  * @see http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html
  * @see http://unicode.org/repos/cldr/trunk/common/supplemental/plurals.xml
  * @see plurals.xml (local copy)
- *
- * @package		I18n_Plural
- * @author		Korney Czukowski
- * @copyright	(c) 2010 Korney Czukowski
- * @license		http://kohanaphp.com/license
+ * 
+ * @package    I18n_Plural
+ * @category   Plural Rules
+ * @author     Korney Czukowski
+ * @copyright  (c) 2011 Korney Czukowski
+ * @license    MIT License
  */
 class I18n_Plural_Welsh extends I18n_Plural_Rules
 {
@@ -33,7 +34,7 @@ class I18n_Plural_Welsh extends I18n_Plural_Rules
 		{
 			return 'zero';
 		}
-		if ($count == 1)
+		elseif ($count == 1)
 		{
 			return 'one';
 		}

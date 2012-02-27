@@ -23,16 +23,21 @@
  * @see http://unicode.org/repos/cldr/trunk/common/supplemental/plurals.xml
  * @see plurals.xml (local copy)
  *
- * @package		I18n_Plural
- * @author		Korney Czukowski
- * @copyright	(c) 2010 Korney Czukowski
- * @license		http://kohanaphp.com/license
+ * @package    I18n_Plural
+ * @category   Plural Rules
+ * @author     Korney Czukowski
+ * @copyright  (c) 2011 Korney Czukowski
+ * @license    MIT License
  */
 class I18n_Plural_Breton extends I18n_Plural_Rules
 {
 	public function get_category($count)
 	{
-		if ($count == 1)
+		if ($count == 0)
+		{
+			return 'zero';
+		}
+		elseif ($count == 1)
 		{
 			return 'one';
 		}
