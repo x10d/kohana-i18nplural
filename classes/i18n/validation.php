@@ -3,7 +3,7 @@
  * I18n_Validation class
  * Attempts to provide grammatically accurate error translations, where plurals are involved
  * The I18n_Validation::errors() method is a slightly modified original Kohana_Validation::errors()
- * 
+ *
  * @package		I18n_Plural
  * @author		Korney Czukowski
  * @copyright	(c) 2010 Korney Czukowski
@@ -83,6 +83,11 @@ class I18n_Validation extends Kohana_Validation
 					{
 						// All values must be strings
 						$value = implode(', ', Arr::flatten($value));
+					}
+					elseif (is_object($value))
+					{
+						// Objects cannot be used in message files
+						continue;
 					}
 
 					// Check if a label for this parameter exists
